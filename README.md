@@ -41,23 +41,20 @@ kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --pa
 7. Jalankan server.py
 
 ## URL yang dapat diakses
+### method = [GET]
 `http://0000:5432/<int:model>/<int:user_id>/ratings/top/<int:count>`
-<br>
-method = [GET]
 <br>
 Menampilkan top <int:count> product yang direkomendasikan untuk user <user_id>
 <br>
 ![img](./img/API1.jpg)
+### method = [GET]
 `http://0000:5432/<int:model>/products/<int:product_id>/recommend/<int:count>`
-<br>
-method = [GET]
 <br>
 Menampilkan product <int:product_id> yang paling direkomendasikan ke sejumlah <count> user
 <br>
 ![img](./img/API2.jpg)
+### method = [GET]
 `http://0000:5432/<int:model>/<int:user_id>/ratings/<int:product_id>`
-<br>
-method = [GET]
 <br>
 Menampilkan rating <int:product_id> yang diberikan oleh user <int:user_id>
 <br>
