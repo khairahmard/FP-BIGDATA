@@ -21,9 +21,9 @@ Menerima data dari server kafka yang dimana datasetnya akan kita gunakan pada en
 ## Penjelasan
 ### Limit data pada masing-masing model adalah 500.000
 ### Model:
-1. Model 1: 500.000 data pertama
-2. Model 2: 500.000 data kedua
-3. Model 3: 500.000 data ketiga
+1. Model 1: 10.000 data pertama
+2. Model 2: 10.000 data kedua
+3. Model 3: 10.000 data ketiga
 
 ### Akses endpoint API
 Dijalankan pada localhost (0.0.0.0) dengan port 5432
