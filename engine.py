@@ -53,7 +53,7 @@ class RecommendationEngine:
             self.model3 = self.als.fit(self.df2)
         logger.info("ALS model built!")
 
-    def get_top_ratings(self, model, user_id, product_count):
+    def get_top_ratings(self, model, user_id, products_count):
         """Recommends up to product_count top unrated product to user_id
         """
         
@@ -67,8 +67,6 @@ class RecommendationEngine:
                                                    func.col('recommendations')['Rating'].alias('Rating')).\
                                                                                         drop('recommendations')
             userSubsetRecs = userSubsetRecs.drop('Rating')
-            userSubsetRecs = userSubsetRecs.join(self.productsdf, ("ProductId"), 'inner')
-            # userSubsetRecs.show()
             # userSubsetRecs.printSchema()
             userSubsetRecs = userSubsetRecs.toPandas()
             userSubsetRecs = userSubsetRecs.to_json()
@@ -83,7 +81,6 @@ class RecommendationEngine:
                                                    func.col('recommendations')['Rating'].alias('Rating')).\
                                                                                         drop('recommendations')
             userSubsetRecs = userSubsetRecs.drop('Rating')
-            userSubsetRecs = userSubsetRecs.join(self.productsdf, ("ProductId"), 'inner')
             # userSubsetRecs.show()
             # userSubsetRecs.printSchema()
             userSubsetRecs = userSubsetRecs.toPandas()
@@ -99,7 +96,6 @@ class RecommendationEngine:
                                                    func.col('recommendations')['Rating'].alias('Rating')).\
                                                                                         drop('recommendations')
             userSubsetRecs = userSubsetRecs.drop('Rating')
-            userSubsetRecs = userSubsetRecs.join(self.productsdf, ("ProductId"), 'inner')
             # userSubsetRecs.show()
             # userSubsetRecs.printSchema()
             userSubsetRecs = userSubsetRecs.toPandas()
@@ -120,8 +116,6 @@ class RecommendationEngine:
                                                      func.col('recommendations')['Rating'].alias('Rating')).\
                                                                                             drop('recommendations')
             productSubsetRecs = productSubsetRecs.drop('Rating')
-            productSubsetRecs = productSubsetRecs.join(self.productsdf, ("ProductId"), 'inner')
-            # userSubsetRecs.show()
             # userSubsetRecs.printSchema()
             productSubsetRecs = productSubsetRecs.toPandas()
             productSubsetRecs = productSubsetRecs.to_json()
@@ -136,7 +130,6 @@ class RecommendationEngine:
                                                      func.col('recommendations')['Rating'].alias('Rating')).\
                                                                                             drop('recommendations')
             productSubsetRecs = productSubsetRecs.drop('Rating')
-            productSubsetRecs = productSubsetRecs.join(self.productsdf, ("ProductId"), 'inner')
             # userSubsetRecs.show()
             # userSubsetRecs.printSchema()
             productSubsetRecs = productSubsetRecs.toPandas()
@@ -152,7 +145,6 @@ class RecommendationEngine:
                                                      func.col('recommendations')['Rating'].alias('Rating')).\
                                                                                             drop('recommendations')
             productSubsetRecs = productSubsetRecs.drop('Rating')
-            productSubsetRecs = productSubsetRecs.join(self.productsdf, ("ProductId"), 'inner')
             # userSubsetRecs.show()
             # userSubsetRecs.printSchema()
             productSubsetRecs = productSubsetRecs.toPandas()
