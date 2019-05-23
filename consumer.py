@@ -9,7 +9,7 @@ consumer = KafkaConsumer(
      enable_auto_commit=True,
      value_deserializer=lambda x: loads(x.decode('utf-8')))
 
-folder_path = os.path.join(os.getcwd(), 'dataset')
+folder_path = os.path.join(os.getcwd(), 'ml-1m')
 limit = 500000      #limit jumlah data tiap model
 counter = 1         #ini baris ke berapa
 model = 1           #ini model ke berapa
@@ -29,7 +29,7 @@ try:
                 writefile.close()
                 break
             if counter == 1:
-                file_path = os.path.join(folder_path, ('model-' + str(model) + '.txt'))
+                file_path = os.path.join(folder_path, ('model_' + str(model) + '.txt'))
                 writefile = open(file_path, "w", encoding="utf-8")
             message = message.value
             writefile.write(message)
