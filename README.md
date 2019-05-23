@@ -12,14 +12,14 @@ Flask web app yang menghubungkan server.py dengan engine.py dan sebagai tempat r
 Untuk inisialisasi spark, untuk menjalankan webserver, untuk memanggil app.py dan engine.py, dan setting dataset location  
 
 #### producer.py
-Untuk mengirimkan data ke consumer secara per-model, dimana masing-masing model berisi 500.000 data
+Untuk mengirimkan data ke consumer secara per-model, dimana masing-masing model berisi 10.000 data
 
 #### consumer.py
 Menerima data dari server kafka yang dimana datasetnya akan kita gunakan pada engine
 
 
 ## Penjelasan
-### Limit data pada masing-masing model adalah 500.000
+### Limit data pada masing-masing model adalah 10.000
 ### Model:
 1. Model 1: 10.000 data pertama
 2. Model 2: 10.000 data kedua
