@@ -42,7 +42,7 @@ if __name__ == "__main__":
     spark.sparkContext.addPyFile(apppyloc)
 
     #set dataset location
-    dataset_path = os.path.join(os.path.dirname(os.getcwd()), 'ml-1m')
+    dataset_path = os.path.join(os.path.dirname(os.getcwd()), 'FP\\ml-1m')
     print (dataset_path)
     app = create_app(spark, dataset_path)
 
