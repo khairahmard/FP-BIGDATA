@@ -54,8 +54,7 @@ class RecommendationEngine:
         logger.info("ALS model built!")
 
     def get_top_ratings(self, model, user_id, products_count):
-        """Recommends up to product_count top unrated product to user_id
-        """
+
         
         if model == 0:
             users = self.df0.select(self.als.getUserCol())
@@ -103,8 +102,6 @@ class RecommendationEngine:
             return userSubsetRecs
 
     def get_top_product_recommend(self, model, product_id, user_count):
-        """Recommends up to products_count top unrated products to user_id
-        """
         
         if model == 0:
             products = self.df0.select(self.als.getItemCol())
@@ -152,8 +149,7 @@ class RecommendationEngine:
             return productSubsetRecs
 
     def get_ratings_for_product_ids(self, model, user_id, product_id):
-        """Given a user_id and a list of product_ids, predict ratings for them
-        """
+
         
         if model == 0:
             request = self.spark_session.createDataFrame([(user_id, product_id)], ["UserId", "ProductId"])
