@@ -3,14 +3,14 @@ from json import loads
 import os
 
 consumer = KafkaConsumer(
-    'amazonbeauty',
+    'amazondata',
      bootstrap_servers=['localhost:9092'],
      auto_offset_reset='earliest',
      enable_auto_commit=True,
      value_deserializer=lambda x: loads(x.decode('utf-8')))
 
 folder_path = os.path.join(os.getcwd(), 'ml-1m')
-limit = 500000      #limit jumlah data tiap model
+limit = 10000      #limit jumlah data tiap model
 counter = 1         #ini baris ke berapa
 model = 1           #ini model ke berapa
 model_limit = 3     #jumlah model
