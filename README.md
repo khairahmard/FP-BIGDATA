@@ -1,6 +1,6 @@
 # FP-BIGDATA
 
-## Files Contained
+## Daftar File
 
 #### server.py
 Inisialisasi CherryPy web server dan untuk tempat inisialisasi fungsi dan memanggil app.py
@@ -18,7 +18,7 @@ Untuk mengirimkan data ke consumer secara per-model, dimana masing-masing model 
 Menerima data dari server kafka yang dimana datasetnya akan kita gunakan pada engine
 
 
-## Specification
+## Penjelasan
 ### Limit data pada masing-masing model adalah 500.000
 ### Model:
 1. Model 1: 500.000 data pertama
